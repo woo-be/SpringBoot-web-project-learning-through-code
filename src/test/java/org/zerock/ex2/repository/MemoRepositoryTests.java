@@ -1,5 +1,6 @@
 package org.zerock.ex2.repository;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;
 import org.junit.jupiter.api.Test;
@@ -9,6 +10,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.test.annotation.Commit;
+import org.springframework.transaction.annotation.Transactional;
 import org.zerock.ex2.entity.Memo;
 
 @SpringBootTest
@@ -88,5 +91,28 @@ public class MemoRepositoryTests {
         Pageable pageable = PageRequest.of(0, 10, sortAll);
         Page<Memo> result = memoRepository.findAll(pageable);
         result.get().forEach(System.out::println);
+    }
+
+    @Test
+    public void testQueryMethods() {
+        List<Memo> list = memoRepository.findByMnoBetweenOrderByMnoDesc(70L, 80L);
+        for (Memo memo : list) {
+            System.out.println(memo);
+        }
+    }
+
+    @Test
+    public void testQueryMethodWithPageable() {
+        Pageable pageable = PageRequest.of(0, 10, Sort.by("mno").descending());
+        Page<Memo> result = memoRepository.findByMnoBetween(10L, 50L, pageable);
+
+        result.get().forEach(System.out::println);
+    }
+
+    @Commit
+    @Transactional
+    @Test
+    public void testDeleteQueryMethods() {
+        memoRepository.deleteMemoByMnoLessThan(10L);
     }
 }
