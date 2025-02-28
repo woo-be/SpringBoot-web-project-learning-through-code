@@ -1,5 +1,6 @@
 package org.zerock.ex2.repository;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;
@@ -114,5 +115,40 @@ public class MemoRepositoryTests {
     @Test
     public void testDeleteQueryMethods() {
         memoRepository.deleteMemoByMnoLessThan(10L);
+    }
+
+    @Commit
+    @Transactional
+    @Test
+    public void testJpql1() {
+        memoRepository.updateMemoTextByMno(21L, "updated Text by updateMemoTextByMno");
+    }
+
+    @Commit
+    @Transactional
+    @Test
+    public void testJpql2() {
+        Memo memo = new Memo(22L, "updated Text by updateMemoTextByMemo");
+        memoRepository.updateMemoTextByMemo(memo);
+    }
+
+    @Test
+    public void testJpqlWithPageable() {
+        Pageable pageable = PageRequest.of(0, 10, Sort.by("mno").descending());
+        Page<Memo> result = memoRepository.getListWithQuery(15L, pageable);
+
+        result.get().forEach(System.out::println);
+    }
+
+    @Test
+    public void testJpqlWithPageableObject() {
+        Pageable pageable = PageRequest.of(0, 10);
+        Page<Object[]> result = memoRepository.getListWithQueryObject(15L, pageable);
+        List<Object[]> content = result.getContent();
+
+        for (Object[] row : content) {
+            Long mno = (Long) row[0];
+            System.out.println("mno: " + mno);
+        }
     }
 }
