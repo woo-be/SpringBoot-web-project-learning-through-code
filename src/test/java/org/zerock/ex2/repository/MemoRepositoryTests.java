@@ -1,3 +1,4 @@
+/*
 package org.zerock.ex2.repository;
 
 import java.util.Date;
@@ -152,3 +153,4 @@ public class MemoRepositoryTests {
         }
     }
 }
+*/

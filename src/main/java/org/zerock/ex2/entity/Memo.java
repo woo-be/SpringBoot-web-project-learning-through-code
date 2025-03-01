@@ -1,3 +1,4 @@
+/*
 package org.zerock.ex2.entity;
 
 import jakarta.persistence.Column;
@@ -28,3 +29,4 @@ public class Memo {
     @Column(length = 200, nullable = false)
     private String memoText;
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package org.zerock.ex2.repository;
 
 import java.util.List;
@@ -40,3 +41,4 @@ public interface MemoRepository extends JpaRepository<Memo, Long> {
     countQuery = "select count(m) from Memo m where m.mno > :mno")
     Page<Object[]> getListWithQueryObject(Long mno, Pageable pageable);
 }
+*/
