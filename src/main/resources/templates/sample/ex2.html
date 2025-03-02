@@ -4,12 +4,17 @@
   <meta charset="UTF-8">
   <title>Title</title>
 </head>
+<style>
+  .target {
+    background-color: red;
+  }
+</style>
 <body>
 
   <ul>
-    <li th:each="dto : ${list}">
-      [[${dto}]]
-    </li>
+    <th:block th:each="dto: ${list}">
+      <li th:text="${dto.sno % 5 == 0} ? ${dto.sno} : ${dto.first}"></li>
+    </th:block>
   </ul>
 
 </body>
