@@ -28,6 +28,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.mariadb.jdbc:mariadb-java-client:3.5.2'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-java8time:3.0.4.RELEASE'
 //	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
 //	implementation 'org.springframework.boot:spring-boot-starter-security'
 //	testImplementation 'org.springframework.security:spring-security-test'
