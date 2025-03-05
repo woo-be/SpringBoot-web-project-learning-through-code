@@ -1,14 +1,13 @@
-/*
-package org.zerock.ex3;
+package org.zerock.guestbook;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Ex3Application {
+public class GuestbookApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Ex3Application.class, args);
+		SpringApplication.run(GuestbookApplication.class, args);
 	}
 
-}*/
+}

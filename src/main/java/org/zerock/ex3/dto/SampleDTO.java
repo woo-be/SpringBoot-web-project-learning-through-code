@@ -1,3 +1,4 @@
+/*
 package org.zerock.ex3.dto;
 
 import java.time.LocalDateTime;
@@ -13,3 +14,4 @@ public class SampleDTO {
     private String last;
     private LocalDateTime regTime;
 }
+*/
