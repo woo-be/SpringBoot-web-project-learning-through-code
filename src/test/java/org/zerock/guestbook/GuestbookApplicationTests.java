@@ -1,15 +1,13 @@
-/*
-package org.zerock.ex3;
+package org.zerock.guestbook;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Ex3ApplicationTests {
+class GuestbookApplicationTests {
 
     @Test
     void contextLoads() {
     }
 
 }
-*/
