@@ -26,7 +26,7 @@ public class GuestbookServiceImpl implements GuestbookService {
         log.info("DTO-----------------------------");
         log.info(dto);
 
-        Guestbook entity = dtoToEntity(dto);
+        Guestbook entity = this.dtoToEntity(dto);
 
         log.info(entity);
 
