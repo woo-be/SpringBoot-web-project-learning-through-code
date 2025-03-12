@@ -14,4 +14,5 @@ spring:
     show-sql: true
 
   thymeleaf:
-    cache: false
+#    cache: false
+    prefix: file:src/main/resources/templates/
