@@ -1,5 +1,6 @@
 package org.zerock.guestbook.service;
 
+import java.util.Optional;
 import java.util.function.Function;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -19,6 +20,12 @@ import org.zerock.guestbook.repository.GuestbookRepository;
 public class GuestbookServiceImpl implements GuestbookService {
 
     private final GuestbookRepository repository;
+
+    @Override
+    public GuestbookDTO read(Long gno) {
+        Optional<Guestbook> result = repository.findById(gno);
+        return result.isPresent() ? this.entityToDTO(result.get()) : null;
+    }
 
     @Override
     public Long register(GuestbookDTO dto) {
