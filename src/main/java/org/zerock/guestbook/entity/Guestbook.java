@@ -1,3 +1,4 @@
+/*
 package org.zerock.guestbook.entity;
 
 import jakarta.persistence.Column;
@@ -40,3 +41,4 @@ public class Guestbook extends BaseEntity{
         this.content = content;
     }
 }
+*/

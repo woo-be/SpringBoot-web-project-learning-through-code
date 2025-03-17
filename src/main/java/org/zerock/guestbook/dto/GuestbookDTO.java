@@ -1,3 +1,4 @@
+/*
 package org.zerock.guestbook.dto;
 
 import java.time.LocalDateTime;
@@ -18,3 +19,4 @@ public class GuestbookDTO {
     private String writer;
     private LocalDateTime regDate, modDate;
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package org.zerock.guestbook.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -8,3 +9,4 @@ public interface GuestbookRepository extends JpaRepository<Guestbook, Long>,
     QuerydslPredicateExecutor<Guestbook> {
 
 }
+*/

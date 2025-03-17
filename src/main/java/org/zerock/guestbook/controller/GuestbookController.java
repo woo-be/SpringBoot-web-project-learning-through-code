@@ -1,3 +1,4 @@
+/*
 package org.zerock.guestbook.controller;
 
 import lombok.RequiredArgsConstructor;
@@ -84,3 +85,4 @@ public class GuestbookController {
     }
 
 }
+*/

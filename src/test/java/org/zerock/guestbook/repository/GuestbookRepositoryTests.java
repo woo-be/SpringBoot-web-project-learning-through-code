@@ -1,3 +1,4 @@
+/*
 package org.zerock.guestbook.repository;
 
 import com.querydsl.core.BooleanBuilder;
@@ -99,3 +100,4 @@ public class GuestbookRepositoryTests {
         });
     }
 }
+*/

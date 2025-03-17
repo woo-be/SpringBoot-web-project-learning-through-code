@@ -1,3 +1,4 @@
+/*
 package org.zerock.guestbook.service;
 
 import com.querydsl.core.BooleanBuilder;
@@ -106,3 +107,4 @@ public class GuestbookServiceImpl implements GuestbookService {
         return booleanBuilder;
     }
 }
+*/

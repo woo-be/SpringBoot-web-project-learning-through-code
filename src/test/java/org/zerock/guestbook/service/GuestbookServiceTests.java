@@ -1,3 +1,4 @@
+/*
 package org.zerock.guestbook.service;
 
 import org.junit.jupiter.api.Test;
@@ -69,3 +70,4 @@ public class GuestbookServiceTests {
         resultDTO.getPageList().forEach(i -> System.out.println(i));
     }
 }
+*/

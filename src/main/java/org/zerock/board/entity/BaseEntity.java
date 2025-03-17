@@ -1,5 +1,4 @@
-/*
-package org.zerock.guestbook.entity;
+package org.zerock.board.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
@@ -23,4 +22,3 @@ abstract class BaseEntity {
     @Column(name = "moddate")
     private LocalDateTime modDate;
 }
-*/
