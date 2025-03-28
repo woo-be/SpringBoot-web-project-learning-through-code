@@ -65,7 +65,7 @@ public class SearchBoardRepositoryImpl extends QuerydslRepositorySupport impleme
         // select b, w, count(r) from Board b
         // left join b.writer w
         // left join Reply r on r.board = b
-        JPQLQuery<Tuple> tuple = jpqlQuery.select(board, member.email, reply.count());
+        JPQLQuery<Tuple> tuple = jpqlQuery.select(board, member, reply.count());
 
         BooleanBuilder booleanBuilder = new BooleanBuilder();
         BooleanExpression expression = board.bno.gt(0L);
