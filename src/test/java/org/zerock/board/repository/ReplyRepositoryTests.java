@@ -1,5 +1,6 @@
 package org.zerock.board.repository;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;
 import org.junit.jupiter.api.Test;
@@ -42,5 +43,15 @@ public class ReplyRepositoryTests {
 
         System.out.println(reply);
         System.out.println(reply.getBoard());
+    }
+
+    @Test
+    public void testListByBoard() {
+
+        Board board = Board.builder().bno(97L).build();
+
+        List<Reply> replyList = replyRepository.getRepliesByBoardOrderByRno(board);
+
+        replyList.forEach(reply -> System.out.println(reply));
     }
 }
