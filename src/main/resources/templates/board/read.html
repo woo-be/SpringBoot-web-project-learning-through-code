@@ -136,7 +136,52 @@
             listGroup.html(str);
           });
         };
+
+        var modal = $('.modal');
+
+        $(".addReply").click(function(){
+          modal.modal('show');
+
+          // 댓글 입력하는 부분 초기화 시키기
+          $('input[name="replyText"]').val('');
+          $('input[name="replyer"]').val('');
+
+          $(".modal-footer .btn").hide(); // 모달 내의 버튼 안 보이도록
+          $(".replySave, .replyClose").show(); // 필요한 버튼들만 보이도록
+        });
+
+        $(".replySave").click(function(){
+
+          var reply = {
+            bno: bno,
+            text: $('input[name="replyText"]').val(),
+            replyer: $('input[name="replyer"]').val()
+          }
+
+          console.log(reply);
+
+          $.ajax({
+            url: '/replies/',
+            method: 'post',
+            data: JSON.stringify(reply),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            success: function(data){
+              console.log(data);
+
+              var newRno = parseInt(data);
+
+              alert(newRno + "번 댓글이 등록되었습니다.")
+              modal.modal('hide');
+              loadJSONData();
+            }
+          })
+        });
+
       });
+
+
+
     </script>
 
   </th:block>
