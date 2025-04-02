@@ -1,3 +1,4 @@
+/*
 package org.zerock.board.repository;
 
 import java.util.List;
@@ -30,3 +31,4 @@ public interface BoardRepository extends JpaRepository<Board, Long>, SearchBoard
             "where b.bno = :bno")
     Object getBoardByBno(@Param("bno") Long bno);
 }
+*/

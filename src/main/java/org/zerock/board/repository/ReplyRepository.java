@@ -1,3 +1,4 @@
+/*
 package org.zerock.board.repository;
 
 import java.util.List;
@@ -15,3 +16,4 @@ public interface ReplyRepository extends JpaRepository<Reply, Long> {
 
     List<Reply> getRepliesByBoardOrderByRno(Board board);
 }
+*/

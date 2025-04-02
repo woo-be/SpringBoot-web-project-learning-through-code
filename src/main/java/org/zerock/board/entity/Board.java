@@ -1,3 +1,4 @@
+/*
 package org.zerock.board.entity;
 
 import jakarta.persistence.Entity;
@@ -39,3 +40,4 @@ public class Board extends BaseEntity {
         this.content = content;
     }
 }
+*/

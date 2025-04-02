@@ -1,7 +1,8 @@
-/*
-package org.zerock.board.entity;
+package org.zerock.mreview.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,13 +16,11 @@ import lombok.ToString;
 @NoArgsConstructor
 @Getter
 @ToString
-public class Member extends BaseEntity {
+public class Movie extends BaseEntity{
 
     @Id
-    private String email;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long mno;
 
-    private String password;
-
-    private String name;
+    private String title;
 }
-*/

@@ -1,10 +1,10 @@
-package org.zerock.board;
+package org.zerock.mreview;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GuestbookApplicationTests {
+class MreviewApplicationTests {
 
     @Test
     void contextLoads() {

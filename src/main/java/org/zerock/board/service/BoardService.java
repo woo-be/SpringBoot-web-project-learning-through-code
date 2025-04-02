@@ -1,3 +1,4 @@
+/*
 package org.zerock.board.service;
 
 import org.zerock.board.dto.BoardDTO;
@@ -46,3 +47,4 @@ public interface BoardService {
         return boardDTO;
     }
 }
+*/

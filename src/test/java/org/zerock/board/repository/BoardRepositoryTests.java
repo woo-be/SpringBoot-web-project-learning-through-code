@@ -1,3 +1,4 @@
+/*
 package org.zerock.board.repository;
 
 import java.util.Arrays;
@@ -111,3 +112,4 @@ public class BoardRepositoryTests {
         Page<Object[]> result = boardRepository.searchPage("t", "1", pageable);
     }
 }
+*/

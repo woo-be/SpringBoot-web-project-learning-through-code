@@ -1,5 +1,4 @@
-/*
-package org.zerock.board.entity;
+package org.zerock.mreview.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -18,18 +17,20 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@ToString(exclude = "board")
-public class Reply extends BaseEntity {
+@ToString(exclude = {"movie", "member"})
+public class Review extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long rno;
-
-    private String text;
-
-    private String replyer;
+    private Long reviewNum;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private Board board; // 연관관계 지정
+    private Movie movie;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Member member;
+
+    private int grade;
+
+    private String text;
 }
-*/

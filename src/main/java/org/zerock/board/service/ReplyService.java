@@ -1,3 +1,4 @@
+/*
 package org.zerock.board.service;
 
 import java.util.List;
@@ -42,3 +43,4 @@ public interface ReplyService {
         return replyDTO;
     }
 }
+*/

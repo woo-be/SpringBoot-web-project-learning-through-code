@@ -1,3 +1,4 @@
+/*
 package org.zerock.board.service;
 
 import java.util.List;
@@ -48,3 +49,4 @@ public class ReplyServiceImpl implements ReplyService {
         replyRepository.deleteById(rno);
     }
 }
+*/

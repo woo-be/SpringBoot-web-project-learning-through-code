@@ -1,3 +1,4 @@
+/*
 package org.zerock.board.repository;
 
 import java.util.List;
@@ -55,3 +56,4 @@ public class ReplyRepositoryTests {
         replyList.forEach(reply -> System.out.println(reply));
     }
 }
+*/

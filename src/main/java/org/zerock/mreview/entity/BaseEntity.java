@@ -1,5 +1,4 @@
-/*
-package org.zerock.board.entity;
+package org.zerock.mreview.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
@@ -22,4 +21,4 @@ abstract class BaseEntity {
     @LastModifiedDate
     @Column(name = "moddate")
     private LocalDateTime modDate;
-}*/
+}

@@ -1,3 +1,4 @@
+/*
 package org.zerock.board.controller;
 
 import lombok.RequiredArgsConstructor;
@@ -89,3 +90,4 @@ public class BoardController {
         return "redirect:/board/read";
     }
 }
+*/

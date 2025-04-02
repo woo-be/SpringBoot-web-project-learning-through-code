@@ -1,3 +1,4 @@
+/*
 package org.zerock.board.dto;
 
 import java.time.LocalDateTime;
@@ -22,3 +23,4 @@ public class ReplyDTO {
 
     private LocalDateTime regDate, modDate;
 }
+*/

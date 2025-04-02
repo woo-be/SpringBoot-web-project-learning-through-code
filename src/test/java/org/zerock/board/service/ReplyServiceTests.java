@@ -1,3 +1,4 @@
+/*
 package org.zerock.board.service;
 
 import java.util.List;
@@ -22,3 +23,4 @@ public class ReplyServiceTests {
         replyDTOList.forEach(replyDTO -> System.out.println(replyDTO));
     }
 }
+*/

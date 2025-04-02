@@ -1,3 +1,4 @@
+/*
 package org.zerock.board.repository.search;
 
 import com.querydsl.core.BooleanBuilder;
@@ -114,3 +115,4 @@ public class SearchBoardRepositoryImpl extends QuerydslRepositorySupport impleme
     }
 
 }
+*/

@@ -1,8 +1,10 @@
-/*
-package org.zerock.board.entity;
+package org.zerock.mreview.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -15,13 +17,17 @@ import lombok.ToString;
 @NoArgsConstructor
 @Getter
 @ToString
+@Table(name = "m_member")
 public class Member extends BaseEntity {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long mid;
+
     private String email;
 
-    private String password;
+    private String pw;
 
-    private String name;
+    private String nickname;
+
 }
-*/

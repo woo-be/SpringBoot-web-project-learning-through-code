@@ -1,3 +1,4 @@
+/*
 package org.zerock.board.controller;
 
 import java.util.List;
@@ -63,3 +64,4 @@ public class ReplyController {
         return new ResponseEntity<>("success", HttpStatus.OK);
     }
 }
+*/
