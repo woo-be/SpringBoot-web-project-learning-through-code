@@ -1,9 +1,11 @@
 package org.zerock.mreview.repository;
 
+import java.util.List;
 import java.util.stream.IntStream;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 import org.zerock.mreview.entity.Member;
 import org.zerock.mreview.entity.Movie;
 import org.zerock.mreview.entity.Review;
@@ -35,6 +37,22 @@ public class ReviewRepositoryTests {
                 .build();
 
             reviewRepository.save(movieReview);
+        });
+    }
+
+    @Test
+    public void testGetMovieReviews() {
+        Movie movie = Movie.builder().mno(96L).build();
+
+        List<Review> result = reviewRepository.findByMovie(movie);
+
+        result.forEach(movieReview -> {
+
+            System.out.println(movieReview.getReviewNum());
+            System.out.println("\t" + movieReview.getGrade());
+            System.out.println("\t" + movieReview.getText());
+            System.out.println("\t" + movieReview.getMember().getEmail());
+            System.out.println("--------------------------------------------");
         });
     }
 

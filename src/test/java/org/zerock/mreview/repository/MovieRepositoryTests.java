@@ -1,6 +1,7 @@
 package org.zerock.mreview.repository;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
 import java.util.stream.IntStream;
 import org.junit.jupiter.api.Test;
@@ -61,6 +62,17 @@ public class MovieRepositoryTests {
 
         for (Object[] objects : result.getContent()) {
             System.out.println(Arrays.toString(objects));
+        }
+    }
+
+    @Test
+    public void testGetMovieWithAll() {
+        List<Object[]> result = movieRepository.getMovieWithAll(96L);
+
+        System.out.println(result);
+
+        for (Object[] arr : result) {
+            System.out.println(Arrays.toString(arr));
         }
     }
 
