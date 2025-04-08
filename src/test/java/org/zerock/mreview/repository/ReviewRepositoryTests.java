@@ -48,10 +48,10 @@ public class ReviewRepositoryTests {
 
         result.forEach(movieReview -> {
 
-            System.out.println(movieReview.getReviewNum());
-            System.out.println("\t" + movieReview.getGrade());
-            System.out.println("\t" + movieReview.getText());
-            System.out.println("\t" + movieReview.getMember().getEmail());
+            System.out.print(movieReview.getReviewNum());
+            System.out.print("\t" + movieReview.getGrade());
+            System.out.print("\t" + movieReview.getText());
+            System.out.print("\t" + movieReview.getMember().getEmail());
             System.out.println("--------------------------------------------");
         });
     }

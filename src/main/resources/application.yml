@@ -5,6 +5,13 @@ spring:
     username: bootuser
     password: bootuser
 
+    servlet:
+      multipart:
+        enabled: true
+        location: C:\\upload
+        max-request-size: 30MB
+        max-file-size: 10MB
+
   jpa:
     hibernate:
       ddl-auto: update
