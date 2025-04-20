@@ -29,7 +29,7 @@
       }
 
       .uploadResult ul li img {
-        width: 10px;
+        width: 100px;
       }
 
     </style>
@@ -130,12 +130,33 @@
             dataType: 'json',
             success: function(result) {
               console.log(result);
+              showResult(result);
             },
             error: function(jqXHR, textStatus, errorThrown) {
               console.log(textStatus);
             }
           }); //$.ajax
         }); //end chang evnet
+
+        function showResult(uploadResultArr) {
+
+          var uploadUL = $(".uploadResult ul");
+
+          var str ="";
+
+          $(uploadResultArr).each(function(i, obj) {
+
+            str += "<li data-name='" + obj.fileName + "' data-path='" + obj.folderPath + "' data-uuid='" + obj.uuid + "'>";
+            str += " <div>";
+            str += "<button type='button' data-file=\'" + obj.imageURL + "\' ";
+            str += "class='btn-warning btn-sm'>X</button><br>";
+            str += "<img src='/display?fileName=" + obj.thumbnailURL + "'>";
+            str += "</div>";
+            str += "</li>";
+          });
+
+          uploadUL.append(str);
+        } // end showResult
 
       }); // document ready
 
