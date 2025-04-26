@@ -28,7 +28,7 @@ public class MovieImageDTO {
         return "";
     }
 
-    public String getThumbnailRUL() {
+    public String getThumbnailURL() {
         try {
             return URLEncoder.encode(path + "/s_" + uuid + "_" + imgName, "UTF-8");
         } catch (UnsupportedEncodingException e) {
