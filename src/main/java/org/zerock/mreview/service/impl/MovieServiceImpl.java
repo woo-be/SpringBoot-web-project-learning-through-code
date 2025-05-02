@@ -1,4 +1,4 @@
-package org.zerock.mreview.service;
+package org.zerock.mreview.service.impl;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,6 +19,7 @@ import org.zerock.mreview.entity.Movie;
 import org.zerock.mreview.entity.MovieImage;
 import org.zerock.mreview.repository.MovieImageRepository;
 import org.zerock.mreview.repository.MovieRepository;
+import org.zerock.mreview.service.MovieService;
 
 @Service
 @Log4j2
