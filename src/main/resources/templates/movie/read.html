@@ -51,9 +51,9 @@
       <input type="text" class="form-control" name="title" th:value="${dto.avg}" readonly>
     </div>
 
-    <div class="updloadResult">
+    <div class="uploadResult">
       <ul>
-        <li th:each="movieImage : ${dto.imageDTOList}">
+        <li th:each="movieImage : ${dto.imageDTOList}" th:data-file="${movieImage.getThumbnailURL()}">
           <img th:if="${movieImage.path != null}" th:src="|/display?fileName=${movieImage.getThumbnailURL()}">
         </li>
       </ul>
@@ -62,6 +62,14 @@
     <button type="button" class="btn btn-primary">
       Review Count <span class="badge badge-light">[[${dto.reviewCnt}]]</span>
     </button>
+
+    <button type="button" class="btn btn-info addReviewBtn">
+      Review Register
+    </button>
+
+    <div class="list-group reviewList">
+
+    </div>
 
     <div class="reviewModal modal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
@@ -86,7 +94,7 @@
             </div>
             <div class="form-group">
               <label>Review Text</label>
-              <input type="text" class="form-control" name="mid" placeholder="Good Movie!">
+              <input type="text" class="form-control" name="text" placeholder="Good Movie!">
             </div>
           </div>
 
@@ -101,7 +109,7 @@
       </div>
     </div>
 
-    <div class="iamgeModal" tabindex="-2" role="dialog">
+    <div class="imageModal modal" tabindex="-2" role="dialog">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           
@@ -125,9 +133,94 @@
       </div>
     </div>
 
+    <script th:src="@{/starrr.js}"></script>
+    <link th:href="@{/css/starrr.css}" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
     <script>
       $(document).ready(function (e) {
         
+        let grade = 0;
+        let mno = [[${dto.mno}]];
+        $('.starrr').starrr({
+          rating: grade,
+          change: function(e, value) {
+            if (value) {
+              console.log(value);
+              grade = value;
+            }
+          }
+        });
+
+        // $(".reviewModal").modal("show");
+
+        let reviewModal = $(".reviewModal");
+        let inputMid = $('input[name="mid"]');
+        let inputText = $('input[name="text"]');
+
+        $(".addReviewBtn").click(function() {
+          inputMid.val("");
+          inputText.val("");
+
+          $(".removeBtn, .modifyBtn").hide();
+          $(".reviewSaveBtn").show();
+
+          reviewModal.modal('show');
+        })
+
+        $('.reviewSaveBtn').click(function() {
+          let data = {mno:mno, grade:grade, text:inputText.val(), mid: inputMid.val()};
+
+          console.log(data);
+
+          $.ajax({
+            url: '/reviews/' + mno,
+            type: "POST",
+            data: JSON.stringify(data),
+            contentType: "application/json; charset=utf-8",
+            dataType: "text",
+            success: function(result) {
+
+              console.log("result: " + result);
+
+              self.location.reload();
+            }
+          })
+
+          reviewModal.modal('hide');
+        });
+
+        function getMovieReviews() {
+
+          function formatTime(str) {
+            let date = new Date(str);
+
+            return date.getFullYear() + '/' +
+            (date.getMonth() + 1) + '/' +
+            date.getDate() + ' ' +
+            date.getHours() + ':' +
+            date.getMinutes();
+          }
+
+          $.getJSON("/reviews/" + mno + "/all" , function(arr) {
+            let str ="";
+
+            $.each(arr, function(idx, review) {
+
+              console.log(review);
+
+              str += '  <div class="card-body" data-reviewnum=' + review.reviewnum + ' data-mid=' + review.mid + '>';
+              str += '    <h5 class="card-title">' + review.text + ' <span>' + review.grade + '</span></h5>';
+              str += '    <h6 class="card-subtitle mb-2 text-muted">' + review.nickname + '</h6>';
+              str += '    <p class="card-text">' + formatTime(review.regDate) + '</p>';
+              str += '  </div>'
+            });
+
+            $(".reviewList").html(str);
+          })
+        }
+
+        getMovieReviews();
+
       });
     </script>
 
