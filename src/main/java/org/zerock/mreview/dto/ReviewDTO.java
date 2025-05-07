@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class ReviewDTO {
 
     // review num
-    private Long reviewNum;
+    private Long reviewnum;
     // Movie mno
     private Long mno;
 

@@ -19,7 +19,7 @@ public interface ReviewService {
     default Review dtoToEntity(ReviewDTO reviewDTO) {
 
         Review movieReview = Review.builder()
-            .reviewNum(reviewDTO.getReviewNum())
+            .reviewNum(reviewDTO.getReviewnum())
             .movie(Movie.builder().mno(reviewDTO.getMno()).build())
             .member(Member.builder().mid(reviewDTO.getMid()).build())
             .grade(reviewDTO.getGrade())
@@ -32,7 +32,7 @@ public interface ReviewService {
     default ReviewDTO entityToDTO(Review movieReview) {
 
         ReviewDTO reviewDTO = ReviewDTO.builder()
-            .reviewNum(movieReview.getReviewNum())
+            .reviewnum(movieReview.getReviewNum())
             .mno(movieReview.getMovie().getMno())
             .mid(movieReview.getMember().getMid())
             .nickname(movieReview.getMember().getNickname())

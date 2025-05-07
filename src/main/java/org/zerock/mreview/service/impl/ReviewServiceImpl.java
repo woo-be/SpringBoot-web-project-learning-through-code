@@ -43,7 +43,7 @@ public class ReviewServiceImpl implements ReviewService {
     @Override
     public void modify(ReviewDTO reviewDTO) {
 
-        Optional<Review> result = reviewRepository.findById(reviewDTO.getReviewNum());
+        Optional<Review> result = reviewRepository.findById(reviewDTO.getReviewnum());
 
         if (result.isPresent()) {
 
