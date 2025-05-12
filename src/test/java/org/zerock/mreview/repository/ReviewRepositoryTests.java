@@ -1,3 +1,4 @@
+/*
 package org.zerock.mreview.repository;
 
 import java.util.List;
@@ -57,3 +58,4 @@ public class ReviewRepositoryTests {
     }
 
 }
+*/

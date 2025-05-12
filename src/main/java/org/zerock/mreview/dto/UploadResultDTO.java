@@ -1,3 +1,4 @@
+/*
 package org.zerock.mreview.dto;
 
 import java.io.Serializable;
@@ -32,3 +33,4 @@ public class UploadResultDTO implements Serializable {
         return "";
     }
 }
+*/

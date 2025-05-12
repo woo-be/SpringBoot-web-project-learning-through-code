@@ -1,3 +1,4 @@
+/*
 package org.zerock.mreview.dto;
 
 import java.time.LocalDateTime;
@@ -29,3 +30,4 @@ public class MovieDTO {
 
     private LocalDateTime modDate;
 }
+*/

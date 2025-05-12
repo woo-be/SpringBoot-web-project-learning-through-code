@@ -1,3 +1,4 @@
+/*
 package org.zerock.mreview.service.impl;
 
 import java.util.ArrayList;
@@ -85,3 +86,4 @@ public class MovieServiceImpl implements MovieService {
         return entitiesToDTO(movie, movieImageList, avg, reviewCnt);
     }
 }
+*/

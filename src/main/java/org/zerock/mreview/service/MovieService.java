@@ -1,3 +1,4 @@
+/*
 package org.zerock.mreview.service;
 
 import java.util.HashMap;
@@ -76,3 +77,4 @@ public interface MovieService {
         return entityMap;
     }
 }
+*/

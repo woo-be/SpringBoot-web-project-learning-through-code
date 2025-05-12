@@ -1,3 +1,4 @@
+/*
 package org.zerock.mreview.controller;
 
 import org.springframework.stereotype.Controller;
@@ -11,3 +12,4 @@ public class UploadTestController {
 
     }
 }
+*/

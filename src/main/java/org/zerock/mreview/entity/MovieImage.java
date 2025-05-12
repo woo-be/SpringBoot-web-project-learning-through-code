@@ -1,3 +1,4 @@
+/*
 package org.zerock.mreview.entity;
 
 import jakarta.persistence.Entity;
@@ -33,3 +34,4 @@ public class MovieImage {
     @ManyToOne(fetch = FetchType.LAZY)
     private Movie movie;
 }
+*/

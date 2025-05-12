@@ -1,3 +1,4 @@
+/*
 package org.zerock.mreview.dto;
 
 import lombok.AllArgsConstructor;
@@ -25,3 +26,4 @@ public class PageRequestDTO {
         return org.springframework.data.domain.PageRequest.of(page - 1, size, sort);
     }
 }
+*/

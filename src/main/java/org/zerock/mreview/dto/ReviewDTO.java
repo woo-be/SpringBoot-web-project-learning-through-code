@@ -1,3 +1,4 @@
+/*
 package org.zerock.mreview.dto;
 
 import java.time.LocalDateTime;
@@ -30,3 +31,4 @@ public class ReviewDTO {
 
     private LocalDateTime regDate, modDate;
 }
+*/

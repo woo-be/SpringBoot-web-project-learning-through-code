@@ -1,3 +1,4 @@
+/*
 package org.zerock.mreview.dto;
 
 import java.io.UnsupportedEncodingException;
@@ -37,3 +38,4 @@ public class MovieImageDTO {
         return "";
     }
 }
+*/

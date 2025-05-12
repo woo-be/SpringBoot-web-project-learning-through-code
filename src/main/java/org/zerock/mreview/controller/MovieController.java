@@ -1,3 +1,4 @@
+/*
 package org.zerock.mreview.controller;
 
 import lombok.RequiredArgsConstructor;
@@ -56,3 +57,4 @@ public class MovieController {
         model.addAttribute("dto", movieDTO);
     }
 }
+*/

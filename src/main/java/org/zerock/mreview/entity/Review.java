@@ -1,3 +1,4 @@
+/*
 package org.zerock.mreview.entity;
 
 import jakarta.persistence.Entity;
@@ -42,3 +43,4 @@ public class Review extends BaseEntity {
         this.text = text;
     }
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package org.zerock.mreview.entity;
 
 import jakarta.persistence.Entity;
@@ -24,3 +25,4 @@ public class Movie extends BaseEntity{
 
     private String title;
 }
+*/

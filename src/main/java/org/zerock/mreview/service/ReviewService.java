@@ -1,3 +1,4 @@
+/*
 package org.zerock.mreview.service;
 
 import java.util.List;
@@ -46,3 +47,4 @@ public interface ReviewService {
         return reviewDTO;
     }
 }
+*/

@@ -28,3 +28,11 @@ org:
   zerock:
     upload:
       path: C:\\upload
+
+logging:
+  level:
+    org:
+      springframework:
+        security:
+          web: trace
+      zerock: debug

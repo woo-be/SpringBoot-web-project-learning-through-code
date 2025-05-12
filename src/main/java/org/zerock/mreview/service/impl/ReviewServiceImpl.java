@@ -1,3 +1,4 @@
+/*
 package org.zerock.mreview.service.impl;
 
 import java.util.List;
@@ -61,3 +62,4 @@ public class ReviewServiceImpl implements ReviewService {
         reviewRepository.deleteById(reviewNum);
     }
 }
+*/

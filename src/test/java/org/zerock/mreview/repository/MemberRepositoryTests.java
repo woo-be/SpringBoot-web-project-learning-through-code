@@ -1,3 +1,4 @@
+/*
 package org.zerock.mreview.repository;
 
 import java.util.stream.IntStream;
@@ -42,3 +43,4 @@ public class MemberRepositoryTests {
         memberRepository.deleteById(mid);
     }
 }
+*/
