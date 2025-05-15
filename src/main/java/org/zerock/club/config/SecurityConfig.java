@@ -26,16 +26,6 @@ public class SecurityConfig {
     }
 
     @Bean
-    public InMemoryUserDetailsManager userDetailsService() {
-        UserDetails user = User.builder()
-            .username("user1")
-            .password(passwordEncoder().encode("1111"))
-            .roles("USER")
-            .build();
-        return new InMemoryUserDetailsManager(user);
-    }
-
-    @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         log.info("----------------------filterChain----------------------");
@@ -51,4 +41,14 @@ public class SecurityConfig {
 
         return http.build();
     }
+
+//    @Bean
+//    public InMemoryUserDetailsManager userDetailsService() {
+//        UserDetails user = User.builder()
+//            .username("user1")
+//            .password(passwordEncoder().encode("1111"))
+//            .roles("USER")
+//            .build();
+//        return new InMemoryUserDetailsManager(user);
+//    }
 }
