@@ -24,6 +24,9 @@ spring:
 #    cache: false
     prefix: file:src/main/resources/templates/
 
+  profiles:
+    include: oauth
+
 org:
   zerock:
     upload:
