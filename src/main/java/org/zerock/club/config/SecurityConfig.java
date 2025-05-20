@@ -29,7 +29,7 @@ public class SecurityConfig {
 
         http.authorizeHttpRequests((auth) ->
             auth.requestMatchers("/sample/all", "/error", "/favicon.ico").permitAll()
-                .requestMatchers("/sample/member").hasRole("USER")
+                .requestMatchers("/sample/member").authenticated()
         );
 
         http.formLogin(withDefaults());
