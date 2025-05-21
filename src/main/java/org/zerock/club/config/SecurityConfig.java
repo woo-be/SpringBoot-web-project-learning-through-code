@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.zerock.club.security.handler.ClubLoginSuccessHandler;
 
 @Configuration
 @EnableWebSecurity
@@ -36,9 +37,15 @@ public class SecurityConfig {
         http.csrf(AbstractHttpConfigurer::disable);
         http.logout(withDefaults());
 
-        http.oauth2Login(withDefaults());
+        http.oauth2Login(oauthLogin ->
+            oauthLogin.successHandler(clubLoginSuccessHandler()));
 
         return http.build();
+    }
+
+    @Bean
+    public ClubLoginSuccessHandler clubLoginSuccessHandler() {
+        return new ClubLoginSuccessHandler(passwordEncoder());
     }
 
 //    @Bean

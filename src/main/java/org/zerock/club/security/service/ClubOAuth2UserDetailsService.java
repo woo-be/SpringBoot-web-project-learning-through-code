@@ -1,8 +1,10 @@
 package org.zerock.club.security.service;
 
 import java.util.Optional;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.zerock.club.entity.ClubMember;
 import org.zerock.club.entity.ClubMemberRole;
 import org.zerock.club.repository.ClubMemberRepository;
+import org.zerock.club.security.dto.ClubAuthMemberDTO;
 
 @Log4j2
 @Service
@@ -41,7 +44,7 @@ public class ClubOAuth2UserDetailsService extends DefaultOAuth2UserService {
 
         String email = null;
 
-        if(clientName.equals("Google")) {
+        if (clientName.equals("Google")) {
             email = oAuth2User.getAttribute("email");
         }
 
@@ -49,14 +52,25 @@ public class ClubOAuth2UserDetailsService extends DefaultOAuth2UserService {
 
         ClubMember member = saveSocialMember(email);
 
-        return oAuth2User;
+        ClubAuthMemberDTO clubAuthMember = new ClubAuthMemberDTO(
+            member.getEmail(),
+            member.getPassword(),
+            true,
+            member.getRoleSet().stream()
+                .map(role -> new SimpleGrantedAuthority("ROLE_" + role.name()))
+                .collect(Collectors.toList()),
+            oAuth2User.getAttributes()
+        );
+        clubAuthMember.setName(member.getName());
+
+        return clubAuthMember;
     }
 
     private ClubMember saveSocialMember(String email) {
 
         Optional<ClubMember> result = repository.findByEmail(email, true);
 
-        if(result.isPresent()) {
+        if (result.isPresent()) {
             return result.get();
         }
 
