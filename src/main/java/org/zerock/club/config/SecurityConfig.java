@@ -5,6 +5,7 @@ import static org.springframework.security.config.Customizer.withDefaults;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -16,6 +17,7 @@ import org.zerock.club.security.handler.ClubLoginSuccessHandler;
 @Configuration
 @EnableWebSecurity
 @Log4j2
+@EnableMethodSecurity
 public class SecurityConfig {
 
     @Bean
@@ -28,10 +30,10 @@ public class SecurityConfig {
 
         log.info("----------------------filterChain----------------------");
 
-        http.authorizeHttpRequests((auth) ->
-            auth.requestMatchers("/sample/all", "/error", "/favicon.ico").permitAll()
-                .requestMatchers("/sample/member").authenticated()
-        );
+//        http.authorizeHttpRequests((auth) ->
+//            auth.requestMatchers("/sample/all", "/error", "/favicon.ico").permitAll()
+//                .requestMatchers("/sample/member").authenticated()
+//        );
 
         http.formLogin(withDefaults());
         http.csrf(AbstractHttpConfigurer::disable);
@@ -39,6 +41,8 @@ public class SecurityConfig {
 
         http.oauth2Login(oauthLogin ->
             oauthLogin.successHandler(clubLoginSuccessHandler()));
+
+        http.rememberMe(rememberMe -> rememberMe.tokenValiditySeconds(60 * 60 * 24 * 7));
 
         return http.build();
     }
